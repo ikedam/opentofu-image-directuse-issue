@@ -11,7 +11,7 @@ Zenn の scrap にもまとめていきます: https://zenn.dev/ikedam/scraps/9c
 ## 対応方針
 
 [Cursor](https://cursor.com/ja) を使用して対応について相談・検討していきます。
-その対応過程は 00-description.md という形のファイル名で記録に残していきます。
+その対応過程は 00-description.md という形のファイル名で記録に残していきます。この記録には、 Cursor 利用者が書いたメッセージ (プロンプト) 自体も含むものとします。
 
 ## ゴール
 
