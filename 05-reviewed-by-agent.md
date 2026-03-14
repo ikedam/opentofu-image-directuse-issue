@@ -21,7 +21,7 @@ I also note that in the discussions around #1931 and the related PRs (#1993, #19
 I would like to ask whether the maintainers would consider the following, only if they find it feasible:
 
 * Documentation and wording
-  * Instead of (or in addition to) "not supported," describing this as a limitation: for example, that the base image may not always be up to date; that images for a given OpenTofu version are not updated after release (e.g. no rebuilds with a newer base); that building your own image is recommended especially in security-sensitive environments; and that the base image may change in future versions.
+  * Instead of "not supported," describing this as a limitation: for example, that the base image may not always be up to date; that images for a given OpenTofu version are not updated after release (e.g. no rebuilds with a newer base); that building your own image is recommended especially in security-sensitive environments; and that the base image may change in future versions.
   * If the intent is only to discourage use as a base image, possibly clarifying that in the docs so that simple CLI use (e.g. `docker run`) is not discouraged in the same way.
 
 * Maintenance of the image
