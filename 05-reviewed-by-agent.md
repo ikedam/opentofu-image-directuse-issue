@@ -1,4 +1,4 @@
-Subject: Request to reconsider the wording on direct usage of the official Docker images
+Subject: Request to reconsider direct usage of the official Docker images
 
 Hi,
 
@@ -6,28 +6,28 @@ I found the following notice in the OpenTofu documentation (https://opentofu.org
 
 > Starting with OpenTofu 1.10, direct usage of the official images is no longer supported.
 
-As I understand it, this means that running OpenTofu via `docker run ghcr.io/opentofu/opentofu` is no longer recommended or supported, and that we are encouraged to build our own image instead.
+As I understand it, this means that running OpenTofu via `docker run ghcr.io/opentofu/opentofu` is no longer recommended or supported, and that we need to build our own image instead.
 
-I appreciate that maintaining secure, up-to-date images requires significant effort. At the same time, I feel that having runnable official images is a considerable advantage for many users and for adoption of open source projects. The current wording can feel restrictive, especially to people who are evaluating or introducing OpenTofu.
+I feel that having runnable official images is a considerable advantage for many users and for adoption of open source projects. The current wording can feel restrictive, especially to people who are evaluating or introducing OpenTofu.
 
 The background for this change appears to be described in issue https://github.com/opentofu/opentofu/issues/1931. My understanding of the reasons for no longer supporting direct usage is:
 
-* The base image (Alpine) is not updated frequently, and updating it is difficult.
+* The project has limited resources to keep the base image (Alpine) updated, so it is not updated frequently.
 * This can lead to security concerns.
 * This can also lead to outdated CA certificates.
 
-I also note that in the discussions around #1931 and the related PRs (#1993, #1994), the focus was on discouraging use of the image **as a base image**, and it was stated that using the image as a **CLI tool** is safe. The current documentation, however, reads as if all direct usage (including `docker run`) is unsupported. I am not sure whether the scope was intentionally broadened or if there is room to align the documentation with that earlier distinction.
+I also note that in the discussions around #1931 and the related PRs (#1993, #1994), the focus was on discouraging use of the image as a base image, and it was stated that using the image as a CLI tool is safe. The current documentation, however, reads as if all direct usage (including `docker run`) is unsupported. I am not sure whether the scope was intentionally broadened or if there is room to align the documentation with that earlier distinction.
 
 I would like to ask whether the maintainers would consider the following, only if they find it feasible:
 
-* **Documentation and wording**
-  * Instead of (or in addition to) “not supported,” describing this as a **limitation**: for example, that the base image may not always be up to date, and that building your own image is recommended especially in security-sensitive environments; and that the base image may change in future versions.
-  * If the intent is only to discourage use **as a base image**, possibly clarifying that in the docs so that simple CLI use (e.g. `docker run`) is not discouraged in the same way.
+* Documentation and wording
+  * Instead of (or in addition to) "not supported," describing this as a limitation: for example, that the base image may not always be up to date; that images for a given OpenTofu version are not updated after release (e.g. no rebuilds with a newer base); that building your own image is recommended especially in security-sensitive environments; and that the base image may change in future versions.
+  * If the intent is only to discourage use as a base image, possibly clarifying that in the docs so that simple CLI use (e.g. `docker run`) is not discouraged in the same way.
 
-* **Maintenance of the image**
+* Maintenance of the image
   * If the team is open to it, semi-automating base image updates (e.g. via Dependabot for Docker: https://docs.github.com/en/code-security/reference/supply-chain-security/supported-ecosystems-and-repositories#docker), or using a `latest` tag for the base, with a simple check (e.g. `tofu --version`) in CI to ensure the image still runs. I understand this may still add maintenance burden and may not be acceptable.
 
-I am aware that maintaining the project requires limited resources and that this request may be asking too much of the core team. The decision is entirely yours. I would be grateful if you could consider this as a gentle request for reconsideration, in the hope that it might improve the experience for users who rely on or would like to use the official images directly.
+I am aware that the project has limited resources and that this request may be asking too much of the core team. The decision is entirely yours. I would be grateful if you could consider this as a gentle request for reconsideration, in the hope that it might improve the experience for users who rely on or would like to use the official images directly.
 
 Thank you for your work on OpenTofu.
 
