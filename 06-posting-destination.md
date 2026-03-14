@@ -1,5 +1,11 @@
 # 投稿先の検討（Issue vs Discussion）と既存スレッドの確認
 
+opentofu のリポジトリーは issue と discusssion の2つをオープンしているようです。
+
+* これを投稿するのは issue と discussion のどちらが適切でしょうか。
+* 投稿先によって、変更が好ましい場所があったら教えてください。
+* 既存の issue や discussion で、既にこの話を取り扱っている投稿がないか確認してください。
+
 ## 1. Issue と Discussion のどちらが適切か
 
 **結論: Issue を推奨します。**
